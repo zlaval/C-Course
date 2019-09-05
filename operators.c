@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     int a = 3;
     printf("a is %d \n", a++);
 
@@ -15,7 +14,7 @@ int main(int argc, char *argv[])
     float res = b * x;
     printf("%f \n", res);
 
-    float z = (int)26.89f + 11.65f;
+    float z = (int) 26.89f + 11.65f;
     printf("%f \n", z);
 
     printf("%d \n", sizeof(int));

@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     unsigned int a = 5; //101
     unsigned int b = 6; //110
 

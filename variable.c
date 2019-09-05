@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
 
     float age = 23.333;
     double weight = 7e+3;
@@ -12,11 +11,10 @@ int main(int argc, char *argv[])
     long double iq = 12334545.7L;
     unsigned long int newton = 23L;
     char letter = 'A';
-    printf("%c",letter);
+    printf("%c", letter);
     char newLine = '\n';
 
-    enum Color
-    {
+    enum Color {
         RED,
         GREEN = 20,
         BLUE

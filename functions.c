@@ -5,10 +5,10 @@
 int global = 15;
 
 void add(int a, int b);
+
 long long int mul(int a, int b);
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     add(3, 5);
     add(5, 8);
 
@@ -20,12 +20,10 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void add(int a, int b)
-{
+void add(int a, int b) {
     printf("%d \n", a + b);
 }
 
-long long int mul(int a, int b)
-{
+long long int mul(int a, int b) {
     return a * b;
 }

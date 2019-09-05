@@ -1,8 +1,11 @@
 #include <stdio.h>
 
+const char message[] = "hello world";
+
 int main(int argc, char *argv[])
 {
 
+    printf(message);
     char name[] = "Zalan";
     printf(name);
 
