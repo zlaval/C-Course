@@ -20,6 +20,18 @@ struct dateTime
     struct date time;
 };
 
+struct hmtime
+{
+    int hour;
+    int minute;
+    struct date
+    {
+        int day;
+        int month;
+        int year;
+    } date;
+};
+
 int main()
 {
     struct date today;
@@ -47,11 +59,12 @@ int main()
 
     struct date dates[3] = {[1] = {2019, 1, 2}};
 
+    struct dateTime now = {{2018, 11, 10}, {15, 23, 56}};
+    now.date.year = 2019;
+    int year = now.date.year;
 
-    struct dateTime now;
-    now.date.year=2019;
-
-    int year=now.date.year;
+    struct hmtime times[10];
+    times[0].date.year = 1800;
 
     return 0;
 }
