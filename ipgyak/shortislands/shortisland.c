@@ -8,49 +8,44 @@ int main()
     scanf("%d", &numberOfMeasures);
 
     int measures[numberOfMeasures];
-
-    for (int i = 0; i < numberOfMeasures; i++)
-    {
-        scanf("%d", &measures[i]);
-    }
-
+    int before = 0;
+    int max = 0;
     int numberOfLower = 0;
     int sizeOfLowerArray = 10;
     int *lowerThenHundred = (int *)calloc(sizeOfLowerArray, sizeof(int));
-
-    int k = 0;
-    while (k < numberOfMeasures && measures[k] != 0)
+    _Bool findFirstZero = 0;
+    for (int i = 0; i < numberOfMeasures; i++)
     {
-        k++;
-    }
-
-    int before = 0;
-    int max = 0;
-    for (int i = k; i < numberOfMeasures; i++)
-    {
-        int actual = measures[i];
-        if (before == 0 && actual != 0)
-        {
-            max = actual;
+        int actual;
+        scanf("%d", &actual);
+        if(actual==0){
+            findFirstZero=1;
         }
-        else if (before != 0 && actual != 0 & before < actual)
+        if (findFirstZero==1)
         {
-            max = actual;
-        }
-        else if (before != 0 && actual == 0)
-        {
-            if (max < 100)
+            if (before == 0 && actual != 0)
             {
-                if (sizeOfLowerArray == numberOfLower)
-                {
-                    sizeOfLowerArray += 10;
-                    lowerThenHundred = (int *)realloc(lowerThenHundred, sizeOfLowerArray * sizeof(int));
-                }
-                *lowerThenHundred++ = max;
-                numberOfLower++;
+                max = actual;
             }
+            else if (before != 0 && actual != 0 & before < actual)
+            {
+                max = actual;
+            }
+            else if (before != 0 && actual == 0)
+            {
+                if (max < 100)
+                {
+                    if (sizeOfLowerArray == numberOfLower)
+                    {
+                        sizeOfLowerArray += 10;
+                        lowerThenHundred = (int *)realloc(lowerThenHundred, sizeOfLowerArray * sizeof(int));
+                    }
+                    *lowerThenHundred++ = max;
+                    numberOfLower++;
+                }
+            }
+            before = actual;
         }
-        before = actual;
     }
 
     lowerThenHundred -= numberOfLower;
