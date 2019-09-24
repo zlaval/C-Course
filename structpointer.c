@@ -30,5 +30,11 @@ int main()
     point.y = &y;
     *point.y = -30;
 
+    struct Point *p = &point;
+    *p->x = 777;
+    *(*p).y = 66;
+
+    printf("%d, %d", *p->x, *p->y);
+
     return 0;
 }
